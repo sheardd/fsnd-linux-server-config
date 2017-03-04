@@ -78,11 +78,13 @@ Configuration Notes
 6) Installed Apache2 and mod_wsgi
 
 7) Installed Postgresql and psycopg2, ensuring the remote connections were not
-   allowed, and created postgresql user 'catalog' (because of postgresql's
+   allowed, and created postgresql user 'catalog'. Because of postgresql's
    'ident sameuser' configuration this involved creating a new catalog ubuntu
-   user to match the database user). The only permission 'catalog' was granted
-   was permission to create databases. As the owner of any databases created,
-   'catalog' would automatically be able to perform required CRUD operations.
+   user to match the database user. This user should be secure though, since
+   password login is disabled and no key has been added for ubuntu user
+   'catalog'. The only permission 'catalog' was granted was permission to
+   create databases. As the owner of any databases created, 'catalog' would
+   automatically be able to perform required CRUD operations.
 
 8) Installed Git.
 
@@ -96,7 +98,7 @@ Configuration Notes
    incrementing id values when run through a script for some reason), and
    updated fb_client_secrets.json after updating facebook API URLs.
 
-10) Updated everything one more time, restarted Apache.
+10) Updated everything one more time using apt, then restarted Apache.
 
 ------------------------------------------------------------------------------
 
